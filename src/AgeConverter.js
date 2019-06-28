@@ -1,3 +1,4 @@
+// A class for converting an earth age to the equivalent age on other planets.
 export class AgeConverter {
   constructor (earthAge) {
     this.earthAge = earthAge;
@@ -9,6 +10,7 @@ export class AgeConverter {
     };
   }
 
+  // Returns this object's age on the given planet.
   getAge(planet) {
     return this.earthAge / this.conversionQuotients[planet];
   }
