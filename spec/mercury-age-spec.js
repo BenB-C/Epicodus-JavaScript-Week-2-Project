@@ -1,4 +1,4 @@
-import { MercuryAge } from './../src/triangle.js';
+import { MercuryAge } from './../src/MercuryAge.js';
 
 describe('MercuryAge.constructor', function() {
   it('should store age in earth years in earthAge property', function() {
