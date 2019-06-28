@@ -4,5 +4,6 @@ export class MercuryAge {
   }
 
   getAge() {
+    return this.earthAge / 0.24;
   }
 }
