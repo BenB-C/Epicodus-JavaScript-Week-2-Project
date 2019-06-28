@@ -1,5 +1,6 @@
 export class MercuryAge {
-  constructor () {
+  constructor (earthAge) {
+    this.earthAge = earthAge;
   }
 
   getAge() {
