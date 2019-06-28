@@ -1,6 +1,6 @@
 import { AgeConverter } from './../src/AgeConverter.js';
 
-const eps = 0.01;
+const eps = 0.001;
 const ageConverter = new AgeConverter(38);
 
 describe('AgeConverter', function() {
@@ -10,7 +10,13 @@ describe('AgeConverter', function() {
 });
 
 describe('getAge("mercury")', function() {
-  it('should return its earth age in Mercury years', function() {
+  it('should return earth age in Mercury years', function() {
     expect(ageConverter.getAge("mercury")).toBeCloseTo(158.33, eps);
+  });
+});
+
+describe('getAge("venus")', function() {
+  it('should return earth age in Venus years', function() {
+    expect(ageConverter.getAge("venus")).toBeCloseTo(158.33, eps);
   });
 });
