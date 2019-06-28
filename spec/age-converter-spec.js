@@ -20,3 +20,15 @@ describe('getAge("venus")', function() {
     expect(ageConverter.getAge("venus")).toBeCloseTo(61.29, eps);
   });
 });
+
+describe('getAge("mars")', function() {
+  it('should return earth age in Mars years', function() {
+    expect(ageConverter.getAge("mars")).toBeCloseTo(20.21, eps);
+  });
+});
+
+describe('getAge("Jupiter")', function() {
+  it('should return earth age in Jupiter years', function() {
+    expect(ageConverter.getAge("jupiter")).toBeCloseTo(186.25, eps);
+  });
+});
