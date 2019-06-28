@@ -3,6 +3,7 @@ export class AgeConverter {
     this.earthAge = earthAge;
     this.conversionFactors = {
       mercury: 1 / 0.24,
+      venus: 1 / 0.62,
     };
   }
 

@@ -17,6 +17,6 @@ describe('getAge("mercury")', function() {
 
 describe('getAge("venus")', function() {
   it('should return earth age in Venus years', function() {
-    expect(ageConverter.getAge("venus")).toBeCloseTo(158.33, eps);
+    expect(ageConverter.getAge("venus")).toBeCloseTo(61.29, eps);
   });
 });
