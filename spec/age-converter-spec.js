@@ -29,6 +29,6 @@ describe('getAge("mars")', function() {
 
 describe('getAge("Jupiter")', function() {
   it('should return earth age in Jupiter years', function() {
-    expect(ageConverter.getAge("jupiter")).toBeCloseTo(186.25, eps);
+    expect(ageConverter.getAge("jupiter")).toBeCloseTo(3.20, eps);
   });
 });
