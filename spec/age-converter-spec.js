@@ -11,7 +11,6 @@ describe('AgeConverter', function() {
 
 describe('getAge("mercury")', function() {
   it('should return earth age in Mercury years', function() {
-    console.log(ageConverter.getAge("mercury"));
     expect(ageConverter.getAge("mercury")).toBeCloseTo(158.33, precision);
   });
 });
