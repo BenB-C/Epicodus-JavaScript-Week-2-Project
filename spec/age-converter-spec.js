@@ -32,3 +32,10 @@ describe('getAge("Jupiter")', function() {
     expect(ageConverter.getAge("jupiter")).toBeCloseTo(3.20, precision);
   });
 });
+
+describe('getAgeDescription("Earth")', function() {
+  it('should return earth age description in Earth years', function() {
+    const expectedResult = "On Earth your age is 38"
+    expect(ageConverter.getAgeDescription("earth")).toEqual(expectedResult);
+  });
+});
