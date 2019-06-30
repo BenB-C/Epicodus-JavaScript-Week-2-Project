@@ -127,7 +127,7 @@ export class LifeExpectancyCalculator {
 
   // Returns the average remaining life expectancy for a person born in the USA in the given year,
   // based on their average life expectancy at birth.
-  getLifeExpectancy(age) {
+  getLifeExpectancy (age) {
     const currentYear = new Date().getFullYear();
     let birthYear = currentYear - age;
     // if birthyear is outside data range, use appropriate boundary data value
@@ -136,7 +136,17 @@ export class LifeExpectancyCalculator {
     } else if ( birthYear >= this.lastDataYear) {
       birthYear = this.lastDataYear;
     }
-    const index = birthYear - this.firstDataYear
+    const index = birthYear - this.firstDataYear;
     return this.data[index].lifeExpectancy - age;
+  }
+
+  // Returns a description of the remaining life expectancy for the given age.
+  getLifeExpectancyDescription (age) {
+    const lifeExpectancy = this.getLifeExpectancy(age);
+    if (lifeExpectancy < 0) {
+      return `You have lived ${-Math.round(lifeExpectancy)} years past your life expectancy`;
+    }
+    return `You have ${Math.round(lifeExpectancy)} years left to live`;
+
   }
 }
