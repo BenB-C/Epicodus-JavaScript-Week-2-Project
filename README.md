@@ -33,7 +33,7 @@ If you find a bug, run into any issues, or have questions, ideas or concerns ple
 
 ## Technologies Used
 
-*
+* ES6 Classes, Date class, Node, Webpack
 
 ### License
 
