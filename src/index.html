@@ -6,6 +6,27 @@
   </head>
   <body>
     <h1>Super Galactic Age Calculator</h1>
-
+    <!-- Planet select -->
+    <form id="age-calculator">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Age:</label>
+        <input type="number" min="0" step="1" class="form-control" id="age-input" placeholder="Enter your age in Earth years">
+      </div>
+      <div class="form-group">
+        <label for="planet-select">Select a planet:</label>
+        <select class="form-control" id="planet-select">
+          <option>Earth</option>
+          <option>Mercury</option>
+          <option>Venus</option>
+          <option>Mars</option>
+          <option>Jupiter</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div>
+      <p id="age-output"></p>
+      <p id="life-output"></p>
+    </div>
   </body>
 </html>
