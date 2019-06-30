@@ -1,3 +1,20 @@
 h1 {
   color: green;
 }
+
+body {
+  background-image: url("https://thumbs.gfycat.com/HappygoluckyDishonestCurassow-size_restricted.gif");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  color: white;
+  margin: 15px;
+}
+
+#age-input, #planet-select {
+  width: 100px;
+}
+
+#output {
+  margin-top: 25px;
+}
