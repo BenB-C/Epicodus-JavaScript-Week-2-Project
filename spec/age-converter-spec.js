@@ -1,6 +1,5 @@
-import { AgeConverter } from './../src/AgeConverter.js';
+import AgeConverter from './../src/AgeConverter.js';
 
-const precision = 2; // number of decimal points to check when comparing floating point numbers
 const ageConverter = new AgeConverter(38);
 
 describe('AgeConverter', function() {
@@ -11,25 +10,25 @@ describe('AgeConverter', function() {
 
 describe('getAge("mercury")', function() {
   it('should return earth age in Mercury years', function() {
-    expect(ageConverter.getAge("mercury")).toBeCloseTo(158.33, precision);
+    expect(ageConverter.getAge("mercury")).toEqual(158);
   });
 });
 
 describe('getAge("venus")', function() {
   it('should return earth age in Venus years', function() {
-    expect(ageConverter.getAge("venus")).toBeCloseTo(61.29, precision);
+    expect(ageConverter.getAge("venus")).toEqual(61);
   });
 });
 
 describe('getAge("mars")', function() {
   it('should return earth age in Mars years', function() {
-    expect(ageConverter.getAge("mars")).toBeCloseTo(20.21, precision);
+    expect(ageConverter.getAge("mars")).toEqual(20);
   });
 });
 
 describe('getAge("Jupiter")', function() {
   it('should return earth age in Jupiter years', function() {
-    expect(ageConverter.getAge("jupiter")).toBeCloseTo(3.20, precision);
+    expect(ageConverter.getAge("jupiter")).toBeCloseTo(3);
   });
 });
 
