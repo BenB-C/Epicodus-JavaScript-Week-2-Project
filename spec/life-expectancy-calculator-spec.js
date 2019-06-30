@@ -24,5 +24,14 @@ describe('LifeExpectancyCalculator.getLifeExpectancy', function() {
   it('should return the life expectancy given an age of 3', function() {
     expect(lec.getLifeExpectancy(3)).toBeCloseTo(76.244003, 6);
   });
+});
 
+describe('LifeExpectancyCalculator.getLifeExpectancyDescription', function() {
+  it('should return the life expectancy description given an age of 38', function() {
+    expect(lec.getLifeExpectancyDescription(38)).toEqual("You have 36 years left to live");
+  });
+
+  it('should return the life expectancy description given an age of 118', function() {
+    expect(lec.getLifeExpectancyDescription(118)).toEqual("You have lived 69 years past your life expectancy");
+  });
 });
