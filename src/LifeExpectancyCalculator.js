@@ -1,6 +1,6 @@
 // A class for calculating a person's average life expectancy at birth from their age.
 // Assumes the person was born in the United States and doesn't differentiate based on gender or other attributes.
-export class LifeExpectancyCalculator {
+export default class LifeExpectancyCalculator {
   // Loads life expectancy data
   constructor() {
     const data = [
@@ -128,7 +128,7 @@ export class LifeExpectancyCalculator {
   // Returns the average remaining life expectancy for a person born in the USA in the given year,
   // based on their average life expectancy at birth.
   getLifeExpectancy (age) {
-    const currentYear = new Date().getFullYear();
+    const currentYear = (new Date()).getFullYear();
     let birthYear = currentYear - age;
     // if birthyear is outside data range, use appropriate boundary data value
     if (birthYear <= this.firstDataYear) {
@@ -141,8 +141,8 @@ export class LifeExpectancyCalculator {
   }
 
   // Returns a description of the remaining life expectancy for the given age.
-  getLifeExpectancyDescription (age) {
-    const lifeExpectancy = this.getLifeExpectancy(age);
+  getLifeExpectancyDescription (lifeExpectancy) {
+    // const lifeExpectancy = this.getLifeExpectancy(age);
     if (lifeExpectancy < 0) {
       return `You have lived ${-Math.round(lifeExpectancy)} years past your life expectancy`;
     }
