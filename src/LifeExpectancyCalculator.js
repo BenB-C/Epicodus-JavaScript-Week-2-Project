@@ -3,8 +3,7 @@
 export class LifeExpectancyCalculator {
   // Loads life expectancy data
   constructor() {
-    this.currentYear = 2019;
-    this.data = [
+    const data = [
       { year:1901, lifeExpectancy:49.299999 },
       { year:1902, lifeExpectancy:50.5 },
       { year:1903, lifeExpectancy:50.599998 },
@@ -121,23 +120,23 @@ export class LifeExpectancyCalculator {
       { year:2014, lifeExpectancy:79.099998 },
       { year:2015, lifeExpectancy:79.244003 }
     ];
+    this.firstDataYear = data[0].year;
+    this.lastDataYear = data[data.length - 1].year;
+    this.data = data;
   }
 
-  // Returns the average life expectancy at birth for a person born in the USA of the given age
+  // Returns the average remaining life expectancy for a person born in the USA in the given year,
+  // based on their average life expectancy at birth.
   getLifeExpectancy(age) {
-    const firstData = this.data[0];
-    if (age >= this.currentYear - firstData.year) {
-      return firstData.lifeExpectancy - age;
+    const currentYear = new Date().getFullYear();
+    let birthYear = currentYear - age;
+    // if birthyear is outside data range, use appropriate boundary data value
+    if (birthYear <= this.firstDataYear) {
+      birthYear = this.firstDataYear;
+    } else if ( birthYear >= this.lastDataYear) {
+      birthYear = this.lastDataYear;
     }
-    const lastData = this.data[this.data.length - 1];
-    if (age <= this.currentYear - lastData.year) {
-      return lastData.lifeExpectancy - age;
-    }
-    for (let i = 0; i < this.data.length; i++) {
-      const data = this.data[i];
-      if (age === this.currentYear - data.year) {
-        return data.lifeExpectancy - age;
-      }
-    }
+    const index = birthYear - this.firstDataYear
+    return this.data[index].lifeExpectancy - age;
   }
 }
